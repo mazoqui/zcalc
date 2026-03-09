@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>zCalc</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <!-- DISPLAY -->
+      <div class="display-frame">
+        <div class="display-screen">
+          <div id="pointer_div">
+            <div class="display-text"><span id="display"></span></div>
+            <div class="display-indicator" id="modifier"></div>
+            <div class="display-indicator" id="pgrm"></div>
+            <div class="display-indicator" id="begin"></div>
+            <div class="display-indicator" id="dmyc"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 1 -->
+      <div class="key-row">
+        <button class="key key-dark" data-key="11">
+          <span class="key-face"
+            ><span class="key-label">n</span
+            ><span class="key-f">AMORT</span></span
+          >
+          <span class="key-pad">12&times;</span>
+        </button>
+        <button class="key key-dark" data-key="12">
+          <span class="key-face"
+            ><span class="key-label">i</span
+            ><span class="key-f">INT</span></span
+          >
+          <span class="key-pad">12&divide;</span>
+        </button>
+        <button class="key key-dark" data-key="13">
+          <span class="key-face"
+            ><span class="key-label">PV</span
+            ><span class="key-f">NPV</span></span
+          >
+          <span class="key-pad">CF&#8320;</span>
+        </button>
+        <button class="key key-dark" data-key="14">
+          <span class="key-face"
+            ><span class="key-label">PMT</span
+            ><span class="key-f">RND</span></span
+          >
+          <span class="key-pad">CF&#11388;</span>
+        </button>
+        <button class="key key-dark" data-key="15">
+          <span class="key-face"
+            ><span class="key-label">FV</span
+            ><span class="key-f">IRR</span></span
+          >
+          <span class="key-pad">N&#11388;</span>
+        </button>
+        <button class="key key-dark" data-key="16">
+          <span class="key-face"><span class="key-label">CHS</span></span>
+          <span class="key-pad">DATE</span>
+        </button>
+        <button class="key key-light" data-key="7">
+          <span class="key-face"><span class="key-label">7</span></span>
+          <span class="key-pad">BEG</span>
+        </button>
+        <button class="key key-light" data-key="8">
+          <span class="key-face"><span class="key-label">8</span></span>
+          <span class="key-pad">END</span>
+        </button>
+        <button class="key key-light" data-key="9">
+          <span class="key-face"><span class="key-label">9</span></span>
+          <span class="key-pad">MEM</span>
+        </button>
+        <button class="key key-light" data-key="10">
+          <span class="key-face"><span class="key-label">&divide;</span></span>
+          <span class="key-pad"></span>
+        </button>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="key-row">
+        <button class="key key-dark" data-key="21">
+          <span class="key-face"
+            ><span class="key-label">y&#739;</span
+            ><span class="key-f">PRICE</span></span
+          >
+          <span class="key-pad">&radic;x</span>
+        </button>
+        <button class="key key-dark" data-key="22">
+          <span class="key-face"
+            ><span class="key-label">1/x</span
+            ><span class="key-f">YTM</span></span
+          >
+          <span class="key-pad">e&#739;</span>
+        </button>
+        <button class="key key-dark" data-key="23">
+          <span class="key-face"
+            ><span class="key-label">%T</span
+            ><span class="key-f">SL</span></span
+          >
+          <span class="key-pad">LN</span>
+        </button>
+        <button class="key key-dark" data-key="24">
+          <span class="key-face"
+            ><span class="key-label">&Delta;%</span
+            ><span class="key-f">SOYD</span></span
+          >
+          <span class="key-pad">FRAC</span>
+        </button>
+        <button class="key key-dark" data-key="25">
+          <span class="key-face"
+            ><span class="key-label">%</span><span class="key-f">DB</span></span
+          >
+          <span class="key-pad">INTG</span>
+        </button>
+        <button class="key key-dark" data-key="26">
+          <span class="key-face"><span class="key-label">EEX</span></span>
+          <span class="key-pad">&Delta;DYS</span>
+        </button>
+        <button class="key key-light" data-key="4">
+          <span class="key-face"><span class="key-label">4</span></span>
+          <span class="key-pad">D.MY</span>
+        </button>
+        <button class="key key-light" data-key="5">
+          <span class="key-face"><span class="key-label">5</span></span>
+          <span class="key-pad">M.DY</span>
+        </button>
+        <button class="key key-light" data-key="6">
+          <span class="key-face"><span class="key-label">6</span></span>
+          <span class="key-pad">x&#772;w</span>
+        </button>
+        <button class="key key-light" data-key="20">
+          <span class="key-face"><span class="key-label">&times;</span></span>
+          <span class="key-pad"></span>
+        </button>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="key-row">
+        <button class="key key-dark" data-key="31">
+          <span class="key-face"
+            ><span class="key-label small">R/S</span
+            ><span class="key-f">P/R</span></span
+          >
+          <span class="key-pad">PSE</span>
+        </button>
+        <button class="key key-dark" data-key="32">
+          <span class="key-face"
+            ><span class="key-label small">SST</span
+            ><span class="key-f"
+              ><span class="key-f-clear">CLEAR</span>&Sigma;</span
+            ></span
+          >
+          <span class="key-pad">BST</span>
+        </button>
+        <button class="key key-dark" data-key="33">
+          <span class="key-face"
+            ><span class="key-label small"
+              >R<span class="arrow-down">&darr;</span></span
+            ><span class="key-f"
+              ><span class="key-f-clear">CLEAR</span>PRGM</span
+            ></span
+          >
+          <span class="key-pad">GTO</span>
+        </button>
+        <button class="key key-dark" data-key="34">
+          <span class="key-face"
+            ><span class="key-label small">x&harr;y</span
+            ><span class="key-f"
+              ><span class="key-f-clear">CLEAR</span>FIN</span
+            ></span
+          >
+          <span class="key-pad">x&le;y</span>
+        </button>
+        <button class="key key-dark" data-key="35">
+          <span class="key-face"
+            ><span class="key-label small">CL<i>X</i></span
+            ><span class="key-f"
+              ><span class="key-f-clear">CLEAR</span>REG</span
+            ></span
+          >
+          <span class="key-pad">x=0</span>
+        </button>
+        <button class="key key-dark" data-key="36">
+          <span class="key-face"
+            ><span class="key-label tiny">ENTER</span
+            ><span class="key-f">PREFIX</span></span
+          >
+          <span class="key-pad">LSTx</span>
+        </button>
+        <button class="key key-light" data-key="1">
+          <span class="key-face"><span class="key-label">1</span></span>
+          <span class="key-pad">&#x0078;&#x0302;</span>
+        </button>
+        <button class="key key-light" data-key="2">
+          <span class="key-face"><span class="key-label">2</span></span>
+          <span class="key-pad">&#x0079;&#x0302;</span>
+        </button>
+        <button class="key key-light" data-key="3">
+          <span class="key-face"><span class="key-label">3</span></span>
+          <span class="key-pad">n!</span>
+        </button>
+        <button class="key key-light" data-key="30">
+          <span class="key-face"><span class="key-label">&minus;</span></span>
+          <span class="key-pad"></span>
+        </button>
+      </div>
+
+      <!-- ROW 4 -->
+      <div class="key-row">
+        <button class="key key-f-mod" data-key="41">
+          <span class="key-face"><span class="key-label">ON</span></span>
+          <span class="key-pad"></span>
+        </button>
+        <button class="key key-orange" data-key="42">
+          <span class="key-face"><span class="key-label">f</span></span>
+          <span class="key-pad"></span>
+        </button>
+        <button class="key key-blue" data-key="43">
+          <span class="key-face"><span class="key-label">g</span></span>
+          <span class="key-pad"></span>
+        </button>
+        <button class="key key-dark" data-key="44">
+          <span class="key-face"><span class="key-label small">STO</span></span>
+          <span class="key-pad"></span>
+        </button>
+        <button class="key key-dark" data-key="45">
+          <span class="key-face"><span class="key-label small">RCL</span></span>
+          <span class="key-pad"></span>
+        </button>
+        <button class="key key-light key-zero" data-key="0">
+          <span class="key-face"><span class="key-label">0</span></span>
+          <span class="key-pad">x&#772;</span>
+        </button>
+        <button class="key key-light" data-key="48">
+          <span class="key-face"
+            ><span class="key-label">&bull;</span
+            ><span class="key-f">SCI</span></span
+          >
+          <span class="key-pad">s</span>
+        </button>
+        <button class="key key-light" data-key="49">
+          <span class="key-face"
+            ><span class="key-label small">&Sigma;+</span></span
+          >
+          <span class="key-pad">&Sigma;&minus;</span>
+        </button>
+        <button class="key key-light" data-key="40">
+          <span class="key-face"><span class="key-label">+</span></span>
+          <span class="key-pad"></span>
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

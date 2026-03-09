@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/*
+      All sizing is relative via em units.
+      The calculator's font-size scales to fill 90% of the viewport
+      while preserving the ~1.6:1 aspect ratio.
+      Base: 1em ≈ 1% of calculator width at reference size.
+    */
+.calculator {
+  /* 90vw / 45em = 2vw per em; 90vh / 28.215em = 3.19vh per em */
+  font-size: min(2vw, 3.19vh);
+  width: 99dvw;
+  max-height: 97dvh;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    #b8b0a0 0%,
+    #a89c8c 5%,
+    #8c8478 50%,
+    #6e685e 100%
+  );
+  border-radius: 0.6em;
+  /* padding: 1em 1.2em 1em; */
+  box-shadow:
+    0 0.3em 1.5em rgba(0, 0, 0, 0.6),
+    inset 0 0.08em 0 rgba(255, 255, 255, 0.15);
+}
+
+/* === DISPLAY === */
+.display-frame {
+  flex: none;
+  background: linear-gradient(180deg, #777 0%, #999 0.15em, #bbb 0.3em);
+  border-radius: 0.3em;
+  padding: 0.2em 0.3em 0.25em;
+  margin-bottom: 1em;
+}
+
+.display-screen {
+  background: linear-gradient(180deg, #c8c4b0 0%, #b8b4a2 40%, #aca894 100%);
+  border-radius: 0.2em;
+  height: 4.2em;
+  position: relative;
+  overflow: hidden;
+}
+
+#pointer_div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.display-text {
+  z-index: 1;
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.9em;
+  font-family: sans-serif;
+  left: 3%;
+  top: 15%;
+}
+
+.display-indicator {
+  z-index: 1;
+  position: absolute;
+  font-size: 0.84em;
+  font-family: sans-serif;
+  top: 70%;
+}
+
+#modifier {
+  left: 3%;
+}
+#pgrm {
+  left: 16%;
+}
+#begin {
+  left: 28%;
+}
+#dmyc {
+  left: 38%;
+}
+
+/* === KEY ROW === */
+.key-row {
+  display: flex;
+  flex: 1;
+  padding: 0 0.15em;
+  margin-bottom: 0.4em;
+  gap: 0.1em;
+}
+
+.key-row:last-child {
+  margin-bottom: 0;
+}
+
+/* === KEY STRUCTURE === */
+.key {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 0.3em 0.3em 0.25em 0.25em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.28em;
+  padding: 0;
+  overflow: visible;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  container-type: size;
+  background-color: transparent;
+}
+
+.key:last-child {
+  margin-right: 0;
+}
+.key:active {
+  transform: translateY(0.07em);
+  filter: brightness(0.85);
+}
+
+.key-face {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3em 0.3em 0 0;
+  padding: 0.1em 0.15em 0;
+  line-height: 1.15;
+}
+
+.key-label {
+  font-size: 30cqh;
+  font-weight: bold;
+}
+
+.key-f {
+  font-size: 14cqh;
+  font-weight: bold;
+  color: #e89030;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.key-light .key-face .key-f {
+  color: #71400b;
+}
+
+/* Angled front-face pad */
+.key-pad {
+  flex: none;
+  height: 22cqh;
+  font-size: 14cqh;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  padding-bottom: 4cqh;
+  border-radius: 0 0 0.5em 0.5em;
+  transform-origin: top center;
+}
+
+/* === DARK KEYS === */
+.key-dark .key-face {
+  background: linear-gradient(180deg, #4a4540 0%, #3a3530 60%, #302c28 100%);
+  color: #e8e4dc;
+  box-shadow: inset 0 0.08em 0 rgba(255, 255, 255, 0.08);
+}
+
+.key-dark .key-pad {
+  background: linear-gradient(180deg, #47423e 0%, #222 100%);
+  color: #5898c8;
+}
+
+/* === LIGHT KEYS === */
+.key-light .key-face {
+  background: linear-gradient(180deg, #ccc4b4 0%, #b4ac9c 60%, #a8a090 100%);
+  color: #2a2520;
+  box-shadow: inset 0 0.08em 0 rgba(255, 255, 255, 0.25);
+}
+
+.key-light .key-pad {
+  background: linear-gradient(180deg, #908880 0%, #807870 100%);
+  color: #143b58;
+}
+
+/* === ORANGE KEY === */
+.key-orange .key-face {
+  background: linear-gradient(180deg, #e89030 0%, #d07020 60%, #c06018 100%);
+  color: #fff;
+  box-shadow: inset 0 0.08em 0 rgba(255, 255, 255, 0.2);
+}
+
+.key-orange .key-pad {
+  background: linear-gradient(180deg, #a04810 0%, #903808 100%);
+  color: #fff;
+}
+
+/* === BLUE KEY === */
+.key-blue .key-face {
+  background: linear-gradient(180deg, #4898d0 0%, #3878b0 60%, #2868a0 100%);
+  color: #fff;
+  box-shadow: inset 0 0.08em 0 rgba(255, 255, 255, 0.2);
+}
+
+.key-blue .key-pad {
+  background: linear-gradient(180deg, #1c4870 0%, #143858 100%);
+  color: #80c0f0;
+}
+
+/* === F KEY (gold text on dark) === */
+.key-f-mod .key-face {
+  background: linear-gradient(180deg, #4a4540 0%, #3a3530 60%, #302c28 100%);
+  color: #e89030;
+  box-shadow: inset 0 0.08em 0 rgba(255, 255, 255, 0.08);
+}
+
+.key-f-mod .key-pad {
+  background: linear-gradient(180deg, #2a2622 0%, #222 100%);
+}
+
+/* === WIDE ZERO KEY === */
+.key-zero {
+  flex: 2.1;
+}
+
+/* === SMALL TEXT VARIANTS === */
+.key-label.small {
+  font-size: 24cqh;
+}
+.key-label.tiny {
+  font-size: 19cqh;
+}
+
+/* === CLEAR prefix on f-labels === */
+.key-f-clear {
+  display: block;
+  font-size: 0.4em;
+  letter-spacing: 0.08em;
+}
+
+.arrow-down {
+  font-size: 1.2em;
+}
