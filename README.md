@@ -2,7 +2,7 @@
 
 A web-based financial calculator emulator inspired by the HP 12C. Runs entirely in the browser as a single-page PWA — no build system, bundler, or package manager required.
 
-**Live demo:** https://fcalc.ltime.me
+**Live demo:** https://zcalc.ltime.me
 
 ## Features
 
