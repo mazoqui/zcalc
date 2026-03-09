@@ -1,6 +1,7 @@
 # zCALC
 
 A web-based financial calculator emulator inspired by the HP 12C. Runs entirely in the browser as a single-page PWA — no build system, bundler, or package manager required.
+<img width="1904" height="1059" alt="image" src="https://github.com/user-attachments/assets/0f51a8c9-3a5e-4cae-8ad4-20ab785945ad" />
 
 **Live demo:** https://zcalc.ltime.me
 
