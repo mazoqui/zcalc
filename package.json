@@ -1,0 +1,25 @@
+{
+  "name": "zcalc",
+  "version": "1.0.0",
+  "description": "A web-based financial calculator emulator inspired by the HP 12C.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mazoqui%40gmail.com:5cbcfb449a39246661f178c9d798b87c27a699d4@github.com/mazoqui/zcalc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazoqui/zcalc/issues"
+  },
+  "homepage": "https://github.com/mazoqui/zcalc#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

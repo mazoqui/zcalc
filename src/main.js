@@ -89,8 +89,8 @@ function initCalculator() {
 if ("serviceWorker" in navigator) {
   const registerServiceWorker = async () => {
     try {
-      const registration = await navigator.serviceWorker.register("sw.js", {
-        scope: "./",
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
       });
       if (registration.installing) {
         console.log("Service worker installing");

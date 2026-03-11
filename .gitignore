@@ -9,8 +9,11 @@ Thumbs.db
 *.swo
 *~
 
-# Node (if ever added)
+# Node
 node_modules/
+
+# Build output
+dist/
 
 # Environment
 .env

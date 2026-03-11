@@ -5,37 +5,37 @@
   "description": "A web-based zCalc financial calculator emulator",
   "icons": [
     {
-      "src": "./favicon.png",
+      "src": "/favicon.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "./logo128.png",
+      "src": "/logo128.png",
       "type": "image/png",
       "sizes": "128x128",
       "purpose": "any"
     },
     {
-      "src": "./logo192.png",
+      "src": "/logo192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "./logo512.png",
+      "src": "/logo512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "./logo512x.png",
+      "src": "/logo512x.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
     }
   ],
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "fullscreen",
   "display_override": ["fullscreen", "standalone"],
   "orientation": "landscape-primary",
