@@ -237,14 +237,44 @@ body {
   background: linear-gradient(180deg, #2a2622 0%, #222 100%);
 }
 
-/* === WIDE ZERO KEY === */
-.key-zero {
-  flex: 2.1;
+/* === ROWS 3-4 GRID (for tall ENTER key) === */
+.key-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr 1fr;
+  flex: 2;
+  padding: 0 0.15em;
+  margin-bottom: 0.4em;
+  gap: 0.4em 0.38em;
+}
+
+.key-grid .key {
+  margin-right: 0;
+}
+
+/* === TALL ENTER KEY === */
+.key-enter {
+  grid-row: 1 / 3;
+  grid-column: 6;
+}
+
+.key-enter .key-label.tiny {
+  font-size: 12cqh;
+}
+
+.key-enter .key-f {
+  font-size: 7cqh;
+}
+
+.key-enter .key-pad {
+  height: 11cqh;
+  font-size: 7cqh;
+  padding-bottom: 2cqh;
 }
 
 /* === SMALL TEXT VARIANTS === */
 .key-label.small {
-  font-size: 24cqh;
+  font-size: 22cqh;
 }
 .key-label.tiny {
   font-size: 19cqh;
