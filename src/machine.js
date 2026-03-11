@@ -1244,6 +1244,16 @@ export class Machine {
     getState().storage.save();
   }
 
+  toggle_power() {
+    const content = document.getElementById("pointer_div");
+    if (!content) return;
+    const isOff = content.style.display === "none";
+    content.style.display = isOff ? "" : "none";
+    if (isOff) {
+      this.display_all();
+    }
+  }
+
   // --- Prefix Display ---
 
   clear_prefix() {

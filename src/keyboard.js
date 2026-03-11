@@ -254,6 +254,7 @@ export class Keyboard {
       (relativeY < this.keyHeight || gridIndex === 25);
 
     if (isWithinKey) {
+      if (navigator.vibrate) navigator.vibrate(15);
       this.onKeyPress(this.gridPositionToKeyCode(gridIndex));
     }
   }

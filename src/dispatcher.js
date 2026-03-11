@@ -284,7 +284,7 @@ export class Dispatcher {
     this.mapKey(36, 0, "enter", [0]);
 
     // === ROW 4: SPECIAL KEYS ===
-    this.mapKey(41, 0, "toggle_decimal_character", [], { noProgramming: true });
+    this.mapKey(41, 0, "toggle_power", [], { noProgramming: true });
     this.mapKey(41, C.KEY_RCL, "shv", [], { noProgramming: true });
     this.mapKey(41, C.KEY_STO, "apocryphal", [1], { noProgramming: true });
 
