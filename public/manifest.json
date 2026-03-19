@@ -1,5 +1,5 @@
 {
-  "name": "zCalc Financial Calculator",
+  "name": "zCalc",
   "id": "mnbkgmfcfidihbddnfbedbadegdamkhp",
   "short_name": "zCalc",
   "description": "A web-based zCalc financial calculator emulator",
@@ -41,5 +41,8 @@
   "orientation": "landscape-primary",
   "theme_color": "#111111",
   "background_color": "#111111",
-  "categories": ["finance", "utilities"]
+  "categories": ["finance", "utilities"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
 }
