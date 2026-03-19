@@ -110,6 +110,12 @@ if ("serviceWorker" in navigator) {
     screen.lock("landscape");
   }
 
+  // On desktop PWA, resize window to fixed calculator size
+  const isDesktop = !("ontouchstart" in window) || window.innerWidth > 1024;
+  if (isDesktop) {
+    window.resizeTo(470, 280);
+  }
+
   setTimeout(() => {
     initCalculator();
   }, 100);
