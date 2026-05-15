@@ -1,5 +1,5 @@
 // Bump CACHE_VERSION on each release to invalidate stale caches.
-const CACHE_VERSION = "zcalc-v1";
+const CACHE_VERSION = "zcalc-v2";
 
 const APP_SHELL = [
   "/",
